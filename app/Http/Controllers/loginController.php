@@ -18,8 +18,8 @@ class loginController extends Controller
         if($masuk){
             return redirect('/detailLaporan');
         }else{
-            return redirect('/login');
+            echo "LOGIN GAGAL";
         }
-        var_dump($data_login);
+        // var_dump($data_login);
     }
 }

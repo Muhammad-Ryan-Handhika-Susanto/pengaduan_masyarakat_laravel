@@ -27,8 +27,8 @@ use Spatie\FlareClient\View;
 
 Route::get('/', [pengaduanController::class, "index"]);
 
-// Route::get('/login', [loginController::class, "login"])->name('login');
-Route::get('/login', [loginController::class, "login"]);
+Route::get('/login', [loginController::class, "login"])->name('login');
+// Route::get('/login', [loginController::class, "login"]);
 Route::post('/login', [loginController::class, "proses_login"]);
 
 // Route::get('/register', [registerController::class, "register"]);
