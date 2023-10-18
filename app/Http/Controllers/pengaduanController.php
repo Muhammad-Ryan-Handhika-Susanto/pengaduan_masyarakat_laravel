@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class pengaduanController extends Controller
 {
     function index() {
-        $judul = "Hello World";
+        $judul = "Selamat Pagi Semuanya";
         $title = "Home";
         return view('home', [
             "textJudul" => $judul,
