@@ -18,8 +18,12 @@ class loginController extends Controller
         if($masuk){
             return redirect('/detailLaporan');
         }else{
-            echo "LOGIN GAGAL";
+            return redirect('/login')->with("error", "username atau password salah");
         }
-        // var_dump($data_login);
+    }
+
+    function logout(){
+        auth::logout();
+        return redirect('/login');
     }
 }

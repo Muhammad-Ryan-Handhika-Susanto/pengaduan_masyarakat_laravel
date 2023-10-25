@@ -9,7 +9,7 @@ class pengaduanController extends Controller
 {
     function index() {
 
-        // return Auth::user();
+        // return Auth::user();    
         $judul = "Selamat Pagi Semuanya";
         $title = "Home";
         return view('home', [

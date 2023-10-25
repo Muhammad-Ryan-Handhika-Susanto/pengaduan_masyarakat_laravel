@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class laporanController extends Controller
@@ -32,10 +33,10 @@ class laporanController extends Controller
 
         DB::table('pengaduan')->insert([
             'tgl_pengaduan' => date('Y-m-d'),
-            'nik' => '456',
+            'nik' => Auth::user()->nik,
             'isi_laporan' => $isi_pengaduan,
             'foto' => $namaFoto,
-            'status' => 'Proses',
+            'status' => 'Proses'
         ]);
         return redirect('/detailLaporan');
     }

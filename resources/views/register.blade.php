@@ -3,7 +3,7 @@
 <h1 class="mt-5 text-center">Register</h1>
 <div class="container register">
   {{-- Register Masyarakat --}}
-    <form method="POST" action="" class="container mt-5">
+    {{-- <form method="POST" action="" class="container mt-5">
         @csrf
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">NIK</label>
@@ -30,10 +30,10 @@
           <label class="form-check-label" for="exampleCheck1">Remember me</label>
         </div>
         <center><button type="submit" name="submit" class="btn btn-primary">Register</button></center>
-      </form>
+      </form> --}}
 
       {{-- Register Petugas --}}
-      {{-- <form method="POST" action="" class="container mt-5">
+      <form method="POST" action="" class="container mt-5">
         @csrf
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Nama</label>
@@ -51,14 +51,14 @@
           <label for="exampleInputPassword1" class="form-label">Telepon</label>
           <input type="text" class="form-control" name="tlp" id="exampleInputPassword1">
         </div>
-        <div class="mb-3">
+        {{-- <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Level</label>
           <input type="text" class="form-control" name="level" id="exampleInputPassword1">
-        </div>
+        </div> --}}
         <div class="mb-3 form-check">
           <input type="checkbox" class="form-check-input" name="rememberMe" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">Remember me</label>
         </div>
         <center><button type="submit" name="submit" class="btn btn-primary">Register</button></center>
-      </form> --}}
+      </form>
 </div>

@@ -1,6 +1,6 @@
 @extends('layouts.link')
 
-<h1 class="mt-5 text-center">Login</h1>
+<h1 class="mt-5 text-center">Login Petugas</h1>
 <div class="container login">
 
   @if (session("error"))

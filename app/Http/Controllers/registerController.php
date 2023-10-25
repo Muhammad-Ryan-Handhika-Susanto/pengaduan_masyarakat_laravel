@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class registerController extends Controller
 {
@@ -33,18 +34,11 @@ class registerController extends Controller
     // }
 
     function proses_tambah_petugas(Request $request) {
-
-            $nama_petugas = $request->nama_petugas;
-            $username = $request->username;
-            $password = $request->password;
-            $tlp = $request->tlp;
-            $level = $request->level;
-    
             DB::table('petugas')->insert([
-                'nama_petugas' => $nama_petugas,
-                'username' => $username,
-                'password' => $password,
-                'tlp' => $tlp,
+                'nama_petugas' => $request->nama_petugas,
+                'username' => $request->username,
+                'password' => Hash::make($request->password),
+                'tlp' => $request->tlp,
                 'level' => "petugas"
             ]);
             return redirect('/login');

@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\detailLaporanController;
 use App\Http\Controllers\laporanController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\loginPetugasController;
 use App\Http\Controllers\pengaduanController;
 use App\Http\Controllers\registerController;
 use Illuminate\Support\Facades\Route;
@@ -24,19 +25,24 @@ use Spatie\FlareClient\View;
 // Route::get('/', function () {
     //     return view('welcome');
     // });
-
+        // Route::auth();
 Route::get('/', [pengaduanController::class, "index"]);
+
+Route::get('/logout', [loginController::class, "logout"]);
 
 Route::get('/login', [loginController::class, "login"])->name('login');
 // Route::get('/login', [loginController::class, "login"]);
 Route::post('/login', [loginController::class, "proses_login"]);
 
-// Route::get('/register', [registerController::class, "register"]);
-// Route::post('/register', [registerController::class, "proses_tambah_masyarakat"]);
-// Route::post('/register', [registerController::class, "proses_tambah_petugas"]);
+Route::get('/loginPetugas', [loginPetugasController::class, "login"])->name('login');
+// Route::get('/login', [loginController::class, "login"]);
+Route::post('/loginPetugas', [loginPetugasController::class, "proses_login"]);
+Route::get('/register', [registerController::class, "register"]);
+// Route::post('/register', [registerContrloginller::class, "proses_tambah_masyarakat"]);
+Route::post('/register', [registerController::class, "proses_tambah_petugas"]);
 // Route::get('/adminPage', [adminPageController::class, "allData"]);
-Route::get('/register', [AuthController::class, 'register']);
-Route::post('/register', [AuthController::class, 'store']);
+// Route::get('/register', [AuthController::class, 'register']);
+// Route::post('/register', [AuthController::class, 'store']);
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/laporan', [laporanController::class, "laporan"]);
@@ -71,4 +77,8 @@ Route::get('/tanggapan', function () {
     return view('tanggapan', [
         "title" => "Tanggapan"
     ]);
+});
+
+Route::get('/petugas', function(){
+    return view('/petugas');
 });
